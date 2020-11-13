@@ -91,3 +91,6 @@ pip3 install selenium
 
 [Apache License 2.0](https://github.com/Bruuuuuuce/PKUAutoSubmit/blob/main/LICENSE)
 
+
+## just test actions
+https://haysc.tech/2020/10/17/pku-auto-beian/
