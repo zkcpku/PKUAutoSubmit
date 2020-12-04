@@ -210,6 +210,12 @@ def fill_in(driver, campus, reason, habitation, district, street):
 
 def run(driver, username, password, campus, reason, destination, track,
         habitation, district, street):
+    if not username:
+        print("the value of username is ",username)
+        return
+    if not password:
+        print("the value of password is ",password)
+        return
     login(driver, username, password)
     print('=================================')
 
@@ -226,8 +232,10 @@ def run(driver, username, password, campus, reason, destination, track,
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('--username', '-u', type=str, help='用户名')
-    parser.add_argument('--password', '-p', type=str, help='密码')
+#     parser.add_argument('--username', '-u', type=str, help='用户名')
+    parser.add_argument('--username', '-u', type=str,nargs='?',const=None, help='用户名')
+#     parser.add_argument('--password', '-p', type=str, help='密码')
+    parser.add_argument('--password', '-p', type=str, nargs='?',const=None,help='密码')
     parser.add_argument('--campus', type=str, help='所在校区, 燕园、万柳、畅春园、圆明园、中关新园', default='燕园')
     parser.add_argument('--reason', type=str, help='出校原因, eg. 吃饭', default='吃饭')
     parser.add_argument('--destination', type=str, help='出校目的地, eg. 北京', default='北京')
